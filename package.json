@@ -1,0 +1,26 @@
+{
+  "name": "frameEnd",
+  "packageManager": "yarn@4.6.0",
+  "scripts": {
+    "dev": "webpack  --config ./configs/webpack.server.config.js"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.25"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "@types/webpack-node-externals": "^3",
+    "html-webpack-plugin": "^5.6.3",
+    "nodemon": "^3.1.10",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
