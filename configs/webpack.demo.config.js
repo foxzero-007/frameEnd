@@ -7,7 +7,7 @@ module.exports = {
   target: "node",
   entry: "./src/demo.ts",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "demo.bundle.js",
     clean: true,
   },

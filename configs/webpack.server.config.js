@@ -7,9 +7,12 @@ module.exports = {
   target: "node",
   entry: "./src/index.ts",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "server.bundle.js",
     clean: true,
+  },
+  resolve: {
+    extensions: ['.ts', '.js', '.json']
   },
   externals: [nodeExternals()],
   module: {
