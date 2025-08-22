@@ -16,6 +16,7 @@ export const QuestionService = {
     questionItem.question = question;
     questionItem.answer = answer;
     const uuid = getNewUuid();
+    console.log(uuid);
     questionItem.uuid = uuid;
     return await dataSource.manager.insert(Questions, questionItem);
   },

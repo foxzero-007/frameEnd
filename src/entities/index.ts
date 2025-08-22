@@ -1,14 +1,32 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm";
 
 @Entity("question_data")
 export class Questions {
-  @PrimaryGeneratedColumn("rowid")
+  @PrimaryGeneratedColumn({ type: "bigint", name: "uuid" })
   uuid!: number;
   @Column({ type: "longtext", name: "answer" })
   answer!: string;
-  @Column({ type: "timestamp", name: "created_time" })
+  @CreateDateColumn({
+    name: "created_time", // 数据库字段名
+    type: "timestamp", // 或 datetime
+    precision: 6, // 👈 保留微秒
+    default: () => "CURRENT_TIMESTAMP(6)",
+  })
   createdTime!: Date;
-  @Column({ type: "timestamp", name: "last_review_time" })
+
+  @UpdateDateColumn({
+    name: "last_review_time",
+    type: "timestamp",
+    precision: 6,
+    default: () => "CURRENT_TIMESTAMP(6)",
+    onUpdate: "CURRENT_TIMESTAMP(6)",
+  })
   lastReviewTime!: Date;
   @Column({ type: "varchar", length: 500, name: "question" })
   question!: string;
